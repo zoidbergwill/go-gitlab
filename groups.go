@@ -48,6 +48,15 @@ type Group struct {
 	Projects             []*Project         `json:"projects"`
 	Statistics           *StorageStatistics `json:"statistics"`
 	CustomAttributes     []*CustomAttribute `json:"custom_attributes"`
+    	LDAPCN               string             `json:"ldap_cn"`         
+    	LDAPAccess           int64              `json:"ldap_access"`     
+    	LDAPGroupLinks       []LDAPGroupLink    `json:"ldap_group_links"`
+}
+
+type LDAPGroupLink struct {
+    CN          string `json:"cn"`          
+    GroupAccess int64  `json:"group_access"`
+    Provider    string `json:"provider"`    
 }
 
 // ListGroupsOptions represents the available ListGroups() options.
